@@ -1,0 +1,1 @@
+VBOXUSER ALL = NOPASSWD: /sbin/shutdown
