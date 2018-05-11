@@ -16,6 +16,8 @@
 
 . VBPATH/vboxsettings
 
+VERSION='0.1'
+
 VBOXVMSCONFIG="$VBOXVMSCONFIGPATH/vboxvms.conf"
 VBOXVMSCONFIG_STARTSTOP="$VBOXVMSCONFIGPATH/vboxvms-start-stop.conf"
 
@@ -247,7 +249,7 @@ if [ -f "$VBOXMANAGE" ]; then
     . $VBOXVMSCONFIG_STARTSTOP
     echo "Start Order: $VM_STARTORDER"
     echo "Stop Order: $VM_STOPORDER"
-    echo
+    echo "Version: $VERSION"
   fi
 
   case "${1}" in
