@@ -94,7 +94,21 @@ cp -f \
   ~/Library/'Application Support'/com.pkamb.PowerKey
 chmod 755 ~/Library/'Application Support'/com.pkamb.PowerKey/shutdownPowerKey.sh
 
+# LockScreen
+cp -f \
+  _lockscreen.sh \
+  $VBPATH/lockscreen.sh
+chmod 754 $VBPATH/lockscreen.sh
+cp -f \
+  _org.virtualbox.lockscreen.plist \
+  ~/Library/LaunchAgents/org.virtualbox.lockscreen.plist
+sed -i '' "s|VBPATH|$VBPATH|" ~/Library/LaunchAgents/org.virtualbox.lockscreen.plist
+sudo chmod 644 ~/Library/LaunchAgents/org.virtualbox.lockscreen.plist
+sudo chown $USER:staff ~/Library/LaunchAgents/org.virtualbox.lockscreen.plist
+
 sudo launchctl load /Library/LaunchDaemons/org.virtualbox.vboxautostart.plist
+
+launchctl load ~/Library/LaunchAgents/org.virtualbox.lockscreen.plist
 
 #===============================================================================
 # End

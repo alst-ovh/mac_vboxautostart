@@ -14,6 +14,11 @@
 USER=`whoami`
 VBPATH="/Users/$USER/Library/VBox"
 
+if [ -f ~/Library/LaunchAgents/org.virtualbox.lockscreen.plist]; then
+  launchctl unload ~/Library/LaunchAgents/org.virtualbox.lockscreen.plist
+  rm ~/Library/LaunchAgents/org.virtualbox.lockscreen.plist
+fi
+
 if [ -f /Library/LaunchDaemons/org.virtualbox.vboxautostart.plist ]; then
   sudo launchctl unload /Library/LaunchDaemons/org.virtualbox.vboxautostart.plist
   sudo rm /Library/LaunchDaemons/org.virtualbox.vboxautostart.plist
