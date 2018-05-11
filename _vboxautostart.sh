@@ -101,8 +101,6 @@ function shutdown()
   checklogfilepath
   echo
   echo "-->" `date` "$USER Begin Shutdown..."
-  #Use pkill VirtualBox on Shutdown to prevent the destroy of .vbox Files
-  /usr/bin/pkill VirtualBox
   /usr/local/bin/vbox.sh stopall
   echo "-->" `date` "$USER End Shutdown"
   rotatelogfile
