@@ -14,7 +14,7 @@
 USER=`whoami`
 VBPATH="/Users/$USER/Library/VBox"
 
-if [ -f ~/Library/LaunchAgents/org.virtualbox.lockscreen.plist]; then
+if [ -f ~/Library/LaunchAgents/org.virtualbox.lockscreen.plist ]; then
   launchctl unload ~/Library/LaunchAgents/org.virtualbox.lockscreen.plist
   rm ~/Library/LaunchAgents/org.virtualbox.lockscreen.plist
 fi
